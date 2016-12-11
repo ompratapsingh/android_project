@@ -1,0 +1,1 @@
+Please read this file before setup project.
