@@ -45,7 +45,7 @@ public class Invitation extends Activity {
         ivAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Invitation.this, Menu.class));
+                startActivity(new Intent(Invitation.this, NewMenu.class));
             }
         });
     }

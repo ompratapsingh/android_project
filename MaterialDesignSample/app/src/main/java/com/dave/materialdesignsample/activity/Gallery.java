@@ -21,8 +21,8 @@ public class Gallery extends AppCompatActivity {
     private ViewPager mViewPager;
     private PagerAdapter mAdapter;
 
-    int[] imgRes = {R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d,
-            R.drawable.e, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i};
+    int[] imgRes = {R.drawable.a1, R.drawable.b1, R.drawable.c1, R.drawable.d1,
+            R.drawable.e1, R.drawable.f1, R.drawable.g1, R.drawable.h1, R.drawable.i1};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

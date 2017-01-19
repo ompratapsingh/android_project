@@ -26,7 +26,7 @@ public class Menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_bg_fragment);
 
 //        getSupportActionBar().hide();
         if (savedInstanceState == null) {
@@ -90,6 +90,7 @@ public class Menu extends AppCompatActivity {
             });
 
             TextView c = new TextView(getActivity());
+            c.setBackgroundResource(android.R.drawable.btn_default_small);
             c.setText("Progress");
             c.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -113,8 +114,9 @@ public class Menu extends AppCompatActivity {
                 }
             });
 
-            c.setBackgroundResource(android.R.drawable.btn_default_small);
+
             TextView d = new TextView(getActivity());
+            d.setBackgroundResource(android.R.drawable.btn_default_small);
             d.setText("Wishes");
             d.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -123,7 +125,6 @@ public class Menu extends AppCompatActivity {
                 }
             });
 
-            d.setBackgroundResource(android.R.drawable.btn_default_small);
             TextView e = new TextView(getActivity());
             e.setText("Contact");
             e.setBackgroundResource(android.R.drawable.btn_default_small);

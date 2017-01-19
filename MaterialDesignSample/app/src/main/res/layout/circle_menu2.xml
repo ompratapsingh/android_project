@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.dave.materialdesignsample.widget.ClipRevealFrame
+        android:id="@+id/menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <com.ogaclejapan.arclayout.ArcLayout
+            android:id="@+id/arc_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:arc_axisRadius="@dimen/layout_child_offset_tumblr"
+            app:arc_origin="center"
+            app:arc_radius="@dimen/layout_radius_tumblr">
+
+            <Button
+                android:id="@+id/btnAlbum"
+                style="@style/Item.Tumblr"
+                android:background="@drawable/jabwemet" />
+
+            <Button
+                android:id="@+id/btnEvents"
+                style="@style/Item.Tumblr"
+                android:background="@drawable/events" />
+
+            <Button
+                android:id="@+id/btnProgress"
+                style="@style/Item.Tumblr"
+                android:background="@drawable/tumblr_red_oval"
+                android:text="Progress" />
+
+            <Button
+                android:id="@+id/btnWishes"
+                style="@style/Item.Tumblr"
+                android:background="@drawable/tumblr_red_oval"
+                android:text="Wishes" />
+
+            <Button
+                android:id="@+id/btnContact"
+                style="@style/Item.Tumblr"
+                android:background="@drawable/tumblr_red_oval"
+                android:text="Contact" />
+
+            <Button
+                android:id="@+id/btnGallery"
+                style="@style/Item.Tumblr"
+                android:background="@drawable/gallary" />
+
+            <Button
+                android:id="@+id/btnSplash"
+                style="@style/Item.Tumblr"
+                android:background="@drawable/tumblr_red_oval"
+                android:text="Splash" />
+
+            <!--<Button-->
+            <!--style="@style/Item.Tumblr"-->
+            <!--android:background="@drawable/tumblr_red_oval"-->
+            <!--android:text="I" />-->
+        </com.ogaclejapan.arclayout.ArcLayout>
+
+        <Button
+            android:id="@+id/center_item"
+            style="@style/Item.Tumblr"
+            android:layout_gravity="center"
+            android:background="@drawable/tumblr_red_oval"
+            android:text="F" />
+    </com.dave.materialdesignsample.widget.ClipRevealFrame>
+
+    <Button
+        android:id="@+id/fab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/tumblr_red_oval"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:visibility="gone" />
+
+</RelativeLayout>
+

@@ -8,5 +8,6 @@
     <color name="pinkFont">#FC608C</color>
     <color name="whiteFont">#FFFFFF</color>
 
-
+    <color name="white">#FFFFFF</color>
+    <color name="tumblr_red">#D95E40</color>
 </resources>
