@@ -73,6 +73,12 @@
             android:label="Events"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2" />
+			
+		//	  <activity
+        //    android:name=".activity.Events"
+        //    android:label="Events"
+          //  android:screenOrientation="portrait"
+           // android:theme="@style/AppTheme2" />
         <activity
             android:name=".activity.Contact"
             android:label="Contact"
