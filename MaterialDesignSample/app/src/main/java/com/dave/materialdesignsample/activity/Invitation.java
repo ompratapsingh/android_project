@@ -4,12 +4,17 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.dave.materialdesignsample.R;
+import com.dave.materialdesignsample.asynctask.RegistrationAsyncTask;
+import com.dave.materialdesignsample.event.RegistrationEvent;
+import com.dave.materialdesignsample.model.RegistrationVo;
 
-public class Invitation extends Activity {
+public class Invitation extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +47,28 @@ public class Invitation extends Activity {
         ivAccept.getLayoutParams().height = (int) (screenWidth * 0.2);
         ivAccept.getLayoutParams().width = (int) (screenWidth * 0.2);
 
-        ivAccept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Invitation.this, NewMenu.class));
-            }
-        });
+        Bundle bundle = getIntent().getExtras();
+        ivAccept.setOnClickListener(this);
+        ivDeny.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        RegistrationAsyncTask registrationAsyncTask = new RegistrationAsyncTask(Invitation.this, true);
+        registrationAsyncTask.execute();
+    }
+
+    /**
+     *<></>
+     * @param registrationEvent
+     */
+    public void onEvent(RegistrationEvent registrationEvent) {
+        RegistrationVo registrationVo = registrationEvent.getRegistrationVo();
+        if (registrationVo != null) {
+            startActivity(new Intent(Invitation.this, NewMenu.class));
+        } else {
+            Log.d("Error", "Error while executing Login!");
+            Toast.makeText(Invitation.this, "Seems Like Error While Performace Task", Toast.LENGTH_LONG).show();
+        }
     }
 }

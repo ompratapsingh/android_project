@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dave.materialdesignsample">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
@@ -30,6 +31,10 @@
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
 
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="bd46880354a779807152d03bd4787fb0bb240f26"
+            />
         <activity
             android:name=".activity.BookOfLove"
             android:screenOrientation="landscape" />
@@ -61,6 +66,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".activity.Events"

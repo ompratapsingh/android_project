@@ -10,10 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.crashlytics.android.Crashlytics;
 import com.dave.materialdesignsample.R;
+import com.dave.materialdesignsample.constant.AppConstants;
 import com.dave.materialdesignsample.global.God;
 import com.plattysoft.leonids.ParticleSystem;
 
+import io.fabric.sdk.android.Fabric;
 import java.util.regex.Pattern;
 
 public class Register extends Activity {
@@ -54,9 +57,14 @@ public class Register extends Activity {
                     public void run() {
 //                if (isValid()) {
                         God.userName = etName.getText().toString();
-                        Intent i = new Intent(Register.this, Invitation.class);
-                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(i);
+                        Bundle bundle=new Bundle();
+                        bundle.putString(AppConstants.R_NAME,etName.getText().toString());
+                        bundle.putString(AppConstants.R_MOBILE,etNumber.getText().toString());
+                        bundle.putString(AppConstants.R_EMAIL,etEmail.getText().toString());
+                        Intent intent = new Intent(Register.this, Invitation.class);
+                        intent.putExtras(bundle);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
                         overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 //                }
                     }
