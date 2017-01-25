@@ -12,15 +12,19 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="DATABASE"
             android:value="message.db" />
+
         <meta-data
             android:name="VERSION"
             android:value="1" />
+
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
+
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.dave.materialdesignsample" />
@@ -31,32 +35,39 @@
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
 
         </activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="bd46880354a779807152d03bd4787fb0bb240f26"
-            />
+            android:value="bd46880354a779807152d03bd4787fb0bb240f26" />
+
         <activity
             android:name=".activity.BookOfLove"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".activity.Gallery"
             android:screenOrientation="landscape" />
+
         <activity android:name=".activity.Invitation" />
+
         <activity
             android:name=".activity.Menu"
             android:label="Menu"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2" />
+
         <activity
             android:name=".activity.NewMenu"
             android:label="Menu"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2" />
+
         <activity
             android:name=".circlemenu.MainCircleActivity"
             android:label="Menu"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2" />
+
         <activity
             android:name=".activity.Register"
             android:label="Menu"
@@ -66,30 +77,26 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
         <activity
             android:name=".activity.Events"
             android:label="Events"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2" />
-			
-		//	  <activity
-        //    android:name=".activity.Events"
-        //    android:label="Events"
-          //  android:screenOrientation="portrait"
-           // android:theme="@style/AppTheme2" />
+
         <activity
             android:name=".activity.Contact"
             android:label="Contact"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2" />
+
         <activity
             android:name=".activity.Wishes"
             android:label="Events"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2"
             android:windowSoftInputMode="adjustPan" />
-    </application>
 
+    </application>
 </manifest>
