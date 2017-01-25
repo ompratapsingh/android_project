@@ -2,6 +2,7 @@ package com.dave.materialdesignsample.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.DisplayMetrics;
@@ -13,7 +14,6 @@ import android.widget.Toast;
 import com.dave.materialdesignsample.R;
 import com.dave.materialdesignsample.global.ConnectionDetector;
 import com.dave.materialdesignsample.global.God;
-import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -128,6 +128,9 @@ public class Invitation extends Activity implements View.OnClickListener {
 
                     Log.e("res", strResponnse);
                     Toast.makeText(Invitation.this, "" + strResponnse, Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(Invitation.this, NewMenu.class);
+                    startActivity(intent);
 //                gson = new Gson();
 //                logInDao = gson.fromJson(strResponnse, LogInDao.class);
 //                    logInDao.getData().get(0);

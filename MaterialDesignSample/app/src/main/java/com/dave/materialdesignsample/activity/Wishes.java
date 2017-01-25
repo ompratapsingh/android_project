@@ -97,6 +97,8 @@ public class Wishes extends AppCompatActivity {
 
                     Log.e("res", strResponnse);
                     Toast.makeText(Wishes.this, "" + strResponnse, Toast.LENGTH_LONG).show();
+
+
 //                gson = new Gson();
 //                logInDao = gson.fromJson(strResponnse, LogInDao.class);
 //                    logInDao.getData().get(0);
