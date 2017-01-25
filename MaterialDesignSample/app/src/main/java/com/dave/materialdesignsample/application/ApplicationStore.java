@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
+import android.util.Log;
+
 import com.crashlytics.android.Crashlytics;
 import java.util.HashMap;
 import io.fabric.sdk.android.Fabric;
@@ -67,6 +69,7 @@ public class ApplicationStore extends MultiDexApplication {
 
             @Override
             public void onActivityDestroyed(Activity activity) {
+                Log.d("Call",">>>>>>>>>>>onActivityDestroyed>>>>>>>>>>>>>");
             }
         });
     }

@@ -86,7 +86,6 @@ public class NewMenu extends AppCompatActivity implements View.OnClickListener {
         //  fab.performClick();
 //    onFabClick(fab);
 
-
         new Handler().postDelayed(new Runnable() {
 
             // Using handler with postDelayed called runnable run method
@@ -97,8 +96,6 @@ public class NewMenu extends AppCompatActivity implements View.OnClickListener {
                 onFabClick(fab);
             }
         }, 100);
-
-
     }
 
     @Override
@@ -310,7 +307,6 @@ public class NewMenu extends AppCompatActivity implements View.OnClickListener {
             reveal.addListener(new Animator.AnimatorListener() {
                 @Override
                 public void onAnimationStart(Animator animation) {
-
                 }
 
                 @Override
@@ -320,17 +316,14 @@ public class NewMenu extends AppCompatActivity implements View.OnClickListener {
 
                 @Override
                 public void onAnimationCancel(Animator animation) {
-
                 }
 
                 @Override
                 public void onAnimationRepeat(Animator animation) {
-
                 }
             });
         }
         return reveal;
     }
-
 }
 
