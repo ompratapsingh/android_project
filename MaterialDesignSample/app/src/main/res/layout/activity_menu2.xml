@@ -77,18 +77,38 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".05" />
+        android:layout_weight=".04" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="bottom"
-        android:layout_weight=".4"
-        android:gravity="bottom"
-        android:orientation="vertical">
+        android:layout_weight=".45">
 
-        <include layout="@layout/circle_menu2" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/circle_bg3" />
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum=".45">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".025" />
+
+            <include layout="@layout/circle_menu2" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".025" />
+        </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>
 

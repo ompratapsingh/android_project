@@ -36,6 +36,7 @@
     <style name="Item" parent="">
         <item name="android:textColor">@color/white</item>
     </style>
+
     <style name="Item.Tumblr">
         <item name="android:layout_width">@dimen/item_circle_size_tumblr</item>
         <item name="android:layout_height">@dimen/item_circle_size_tumblr</item>

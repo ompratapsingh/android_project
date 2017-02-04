@@ -9,9 +9,10 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".1" />
+        android:layout_weight=".05" />
 
     <RelativeLayout
+        android:id="@+id/rl"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".4">
@@ -38,8 +39,8 @@
                     android:id="@+id/ivLeftBg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:rotation="350"
                     android:layout_centerInParent="true"
+                    android:rotation="350"
                     android:src="@drawable/heart" />
             </RelativeLayout>
         </LinearLayout>
@@ -67,69 +68,110 @@
                     android:id="@+id/ivRightBg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:rotation="20"
                     android:layout_centerInParent="true"
+                    android:rotation="20"
                     android:src="@drawable/heart" />
             </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight=".05" />-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".2">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha=".4"
+            android:background="#fff" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvGroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Groom"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/heart"
+                android:gravity="center" />
+
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/tvBride"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|bottom"
+                android:text="Bride"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp" />
         </LinearLayout>
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".05" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#737373"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="The favour of your reply is \nkindly Requested"
-        android:textColor="#fff"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".02" />
+        android:layout_weight=".04" />
 
     <LinearLayout
+        android:id="@+id/llbase"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_weight=".42"
-        android:background="#EAEAEA"
+        android:layout_weight=".3"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:weightSum=".1">
 
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".05" />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".4"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#737373"
             android:gravity="center"
+            android:padding="5dp"
+            android:text="The favour of your reply is \nkindly Requested"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#EAEAEA"
+            android:gravity="center"
+            android:padding="5dp"
             android:text="Are you attending our \nWedding?"
             android:textColor="#000"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".05" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight=".45"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight=".1"
+            android:background="#eaeaea"
             android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="1">
@@ -139,15 +181,20 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".35"
+                android:padding="5dp"
                 android:src="@drawable/accept" />
+
             <ImageView
                 android:id="@+id/ivDeny"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".35"
+                android:padding="5dp"
                 android:src="@drawable/reject" />
 
         </LinearLayout>
     </LinearLayout>
+
+
 </LinearLayout>
 

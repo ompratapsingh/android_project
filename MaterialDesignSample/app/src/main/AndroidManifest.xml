@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name="com.orm.SugarApp"
@@ -33,9 +34,14 @@
             android:name=".activity.Splash"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
+        <service
+            android:name="PlayAudio"
+            android:enabled="true" />
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="bd46880354a779807152d03bd4787fb0bb240f26" />
@@ -48,7 +54,14 @@
             android:name=".activity.Gallery"
             android:screenOrientation="landscape" />
 
-        <activity android:name=".activity.Invitation" />
+        <activity
+            android:name=".activity.Invitation"
+            android:screenOrientation="portrait">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
 
         <activity
             android:name=".activity.Menu"
@@ -58,25 +71,25 @@
 
         <activity
             android:name=".activity.NewMenu"
-            android:label="Menu"
+            android:label="Groom weds Bride"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2" />
-
-        <activity
-            android:name=".circlemenu.MainCircleActivity"
-            android:label="Menu"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2" />
+            android:theme="@style/AppTheme2">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
 
         <activity
             android:name=".activity.Register"
             android:label="Menu"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:theme="@style/AppTheme2"
+            android:windowSoftInputMode="adjustPan">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity
@@ -97,6 +110,5 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2"
             android:windowSoftInputMode="adjustPan" />
-
     </application>
 </manifest>

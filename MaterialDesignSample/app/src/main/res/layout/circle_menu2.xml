@@ -20,43 +20,41 @@
             app:arc_radius="@dimen/layout_radius_tumblr">
 
             <Button
-                android:id="@+id/btnAlbum"
-                style="@style/Item.Tumblr"
-                android:background="@drawable/jabwemet" />
-
-            <Button
                 android:id="@+id/btnEvents"
                 style="@style/Item.Tumblr"
-                android:background="@drawable/events" />
-
-            <Button
-                android:id="@+id/btnProgress"
-                style="@style/Item.Tumblr"
-                android:background="@drawable/tumblr_red_oval"
-                android:text="Progress" />
+                android:background="@drawable/eventbg" />
 
             <Button
                 android:id="@+id/btnWishes"
                 style="@style/Item.Tumblr"
-                android:background="@drawable/tumblr_red_oval"
-                android:text="Wishes" />
-
-            <Button
-                android:id="@+id/btnContact"
-                style="@style/Item.Tumblr"
-                android:background="@drawable/tumblr_red_oval"
-                android:text="Contact" />
+                android:background="@drawable/wishesbg" />
 
             <Button
                 android:id="@+id/btnGallery"
                 style="@style/Item.Tumblr"
-                android:background="@drawable/gallary" />
+                android:background="@drawable/gallerybg" />
 
             <Button
-                android:id="@+id/btnSplash"
+                android:id="@+id/btnAlbum"
+                style="@style/Item.Tumblr"
+                android:background="@drawable/albumbg" />
+
+            <!--<Button
+                android:id="@+id/btnProgress"
                 style="@style/Item.Tumblr"
                 android:background="@drawable/tumblr_red_oval"
-                android:text="Splash" />
+                android:text="Progress" />-->
+
+            <Button
+                android:id="@+id/btnContact"
+                style="@style/Item.Tumblr"
+                android:background="@drawable/contactbg" />
+
+            <!-- <Button
+                 android:id="@+id/btnSplash"
+                 style="@style/Item.Tumblr"
+                 android:background="@drawable/tumblr_red_oval"
+                 android:text="Splash" />-->
 
             <!--<Button-->
             <!--style="@style/Item.Tumblr"-->
@@ -66,10 +64,10 @@
 
         <Button
             android:id="@+id/center_item"
-            style="@style/Item.Tumblr"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
-            android:background="@drawable/tumblr_red_oval"
-            android:text="F" />
+            android:background="@drawable/center_img" />
     </com.dave.materialdesignsample.widget.ClipRevealFrame>
 
     <Button

@@ -2,7 +2,6 @@ package com.dave.materialdesignsample.activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,6 +28,8 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.dave.materialdesignsample.global.God.URL;
 
 public class Wishes extends AppCompatActivity {
     private List<Message> allMessages;
@@ -67,9 +68,9 @@ public class Wishes extends AppCompatActivity {
             Toast.makeText(this, "No internet connection...", Toast.LENGTH_SHORT).show();
         } else {
             progressDialog = ProgressDialog.show(Wishes.this, "", "Please wait...");
-
-            String deviceId = Settings.Secure.getString(this.getContentResolver(),
-                    Settings.Secure.ANDROID_ID);
+//
+//            String deviceId = Settings.Secure.getString(this.getContentResolver(),
+//                    Settings.Secure.ANDROID_ID);
             JSONObject jsonParams = new JSONObject();
 
             try {
@@ -88,7 +89,7 @@ public class Wishes extends AppCompatActivity {
                 e.printStackTrace();
             }
             client = new AsyncHttpClient();
-            client.post(Wishes.this, God.URL, entity, "application/json", new AsyncHttpResponseHandler() {
+            client.post(Wishes.this, URL, entity, "application/json", new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                     progressDialog.dismiss();
@@ -99,6 +100,11 @@ public class Wishes extends AppCompatActivity {
                     Toast.makeText(Wishes.this, "" + strResponnse, Toast.LENGTH_LONG).show();
 
 
+                  /*  List<Message> messages = new ArrayList<>();
+                    messages.add(new Message("isbn123", "Title here", "2nd edition"))
+                    messages.add(new Message("isbn456", "Title here 2", "3nd edition"))
+                    messages.add(new Message("isbn789", "Title here 3", "4nd edition"))
+                    SugarRecord.saveInTx(messages);*/
 //                gson = new Gson();
 //                logInDao = gson.fromJson(strResponnse, LogInDao.class);
 //                    logInDao.getData().get(0);
@@ -142,7 +148,7 @@ public class Wishes extends AppCompatActivity {
                 e.printStackTrace();
             }
             client = new AsyncHttpClient();
-            client.post(Wishes.this, God.URL, entity, "application/json", new AsyncHttpResponseHandler() {
+            client.post(Wishes.this, URL, entity, "application/json", new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                     progressDialog.dismiss();

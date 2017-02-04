@@ -10,8 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.dave.materialdesignsample.PlayAudio;
 import com.dave.materialdesignsample.R;
 import com.dave.materialdesignsample.global.God;
+import com.google.gson.Gson;
 import com.plattysoft.leonids.ParticleSystem;
 
 import java.util.regex.Pattern;
@@ -21,6 +23,7 @@ public class Register extends Activity {
     EditText etNumber, etEmail, etName;
     Button btnRegister;
     private Handler mHandler = new Handler();
+    private Gson gson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,7 @@ public class Register extends Activity {
                             God.email = etEmail.getText().toString();
                             Intent intent = new Intent(Register.this, Invitation.class);
                             startActivity(intent);
+//                            finish();
                        /* Bundle bundle=new Bundle();
                         bundle.putString(AppConstants.R_NAME,etName.getText().toString());
                         bundle.putString(AppConstants.R_MOBILE,etNumber.getText().toString());
@@ -109,6 +113,8 @@ public class Register extends Activity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        Intent objIntent2 = new Intent(this, PlayAudio.class);
+        stopService(objIntent2);
         this.finish();
     }
 

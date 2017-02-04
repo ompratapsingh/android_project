@@ -4,26 +4,22 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewAnimationUtils;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.dave.materialdesignsample.PlayAudio;
 import com.dave.materialdesignsample.R;
 import com.dave.materialdesignsample.widget.AnimatorUtils;
 import com.dave.materialdesignsample.widget.ClipRevealFrame;
@@ -40,6 +36,15 @@ public class NewMenu extends AppCompatActivity implements View.OnClickListener {
     ClipRevealFrame menuLayout;
     ArcLayout arcLayout;
     View centerItem;
+    private Handler mHandler = new Handler();
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent objIntent2 = new Intent(this, PlayAudio.class);
+        stopService(objIntent2);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,11 +76,11 @@ public class NewMenu extends AppCompatActivity implements View.OnClickListener {
         centerItem = findViewById(R.id.center_item);
         btnAlbum = (Button) rootLayout.findViewById(R.id.btnAlbum);
         btnEvents = (Button) rootLayout.findViewById(R.id.btnEvents);
-        btnProgress = (Button) rootLayout.findViewById(R.id.btnProgress);
+//        btnProgress = (Button) rootLayout.findViewById(R.id.btnProgress);
         btnWishes = (Button) rootLayout.findViewById(R.id.btnWishes);
         btnContact = (Button) rootLayout.findViewById(R.id.btnContact);
         btnGallery = (Button) rootLayout.findViewById(R.id.btnGallery);
-        btnSplash = (Button) rootLayout.findViewById(R.id.btnSplash);
+//        btnSplash = (Button) rootLayout.findViewById(R.id.btnSplash);
         centerItem.setOnClickListener(this);
         for (int i = 0, size = arcLayout.getChildCount(); i < size; i++) {
             arcLayout.getChildAt(i).setOnClickListener(this);
@@ -127,58 +132,23 @@ public class NewMenu extends AppCompatActivity implements View.OnClickListener {
         switch (btn.getId()) {
 
             case R.id.btnAlbum:
-                Log.e("test", "ID: " + btn.getId());
-//                Toast.makeText(this, "Clicked :" + btn.getText(), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), BookOfLove.class));
                 break;
 
             case R.id.btnEvents:
-                Log.e("test", "ID: " + btn.getId());
-//                Toast.makeText(this, "Clicked :" + btn.getText(), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), Events.class));
-                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
-                break;
-
-            case R.id.btnProgress:
-                Log.e("test", "ID: " + btn.getId());
-//                Toast.makeText(this, "Clicked :" + btn.getText(), Toast.LENGTH_SHORT).show();
-                DisplayMetrics displayMetrics = new DisplayMetrics();
-                ((WindowManager) getApplicationContext().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(displayMetrics);
-                int screenHeight = displayMetrics.heightPixels;
-                int screenWidth = displayMetrics.widthPixels;
-                final Dialog dialog = new Dialog(NewMenu.this);
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.popup);
-                dialog.setCancelable(true);
-                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-                Window window = dialog.getWindow();
-                lp.copyFrom(window.getAttributes());
-                dialog.getWindow().setLayout(lp.WRAP_CONTENT, lp.WRAP_CONTENT);
-                dialog.show();
                 break;
 
             case R.id.btnWishes:
-                Log.e("test", "ID: " + btn.getId());
-//                Toast.makeText(this, "Clicked :" + btn.getText(), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), Wishes.class));
                 break;
 
             case R.id.btnContact:
-                Log.e("test", "ID: " + btn.getId());
                 startActivity(new Intent(getApplicationContext(), Contact.class));
-//                Toast.makeText(this, "Clicked :" + btn.getText(), Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.btnGallery:
-                Log.e("test", "ID: " + btn.getId());
-//                Toast.makeText(this, "Clicked :" + btn.getText(), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), Gallery.class));
-                break;
-
-            case R.id.btnSplash:
-                Log.e("test", "ID: " + btn.getId());
-//                Toast.makeText(this, "Clicked :" + btn.getText(), Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), Splash.class));
                 break;
         }
     }
@@ -206,7 +176,7 @@ public class NewMenu extends AppCompatActivity implements View.OnClickListener {
 
         Animator revealAnim = createCircularReveal(menuLayout, cx, cy, startRadius, endRadius);
         revealAnim.setInterpolator(new AccelerateDecelerateInterpolator());
-        revealAnim.setDuration(200);
+        revealAnim.setDuration(100);
 
         animList.add(revealAnim);
         animList.add(createShowItemAnimator(centerItem));

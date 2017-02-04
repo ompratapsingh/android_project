@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Please Wait"
+            android:text="Groom Weds Bride"
             android:textColor="#D1026B"
             android:textSize="20sp" />
 
@@ -35,11 +35,11 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:padding="10dp"
             android:layout_margin="10dp"
             android:background="@android:color/transparent"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <pl.droidsonroids.gif.GifTextView
                 android:layout_width="40dp"
